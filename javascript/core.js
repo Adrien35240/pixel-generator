@@ -14,17 +14,17 @@ let app =
                     row.style.width = zoom.inputZoom.value+'px';
                     row.style.height = zoom.inputZoom.value+'px';
                     row.classList.add('row');
+                    row.addEventListener('click',app.handleRowClick);
                     line.appendChild(row);
                 }
             }
         },
+        handleRowClick : (e)=> {
+            e.target.style.backgroundColor = 'grey';
 
-
-
+        },
         init : () => {
-            // eslint-disable-next-line no-undef
             pixelX.inputRangeX.addEventListener('input', pixelX.handlePixelX);
-            // eslint-disable-next-line no-undef
             pixelY.inputRangeY.addEventListener('input', pixelY.handlePixelY);
             zoom.inputZoom.addEventListener('input', zoom.handleZoom);
             app.drawGrid();
