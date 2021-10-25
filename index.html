@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Pixel Generator</title>
+</head>
+<body>
+    <div class="top-form" id="top-form">
+        <div class="top-form__pixel-x">
+            <label for="pixel-x" id="label-pixel-x">Nombre de pixels X :</label>
+            <input type="range" id="pixel-x" min="8" max="50" step="2" value=16>
+        </div>
+       <div class="top-form__pixel-y">
+           <label for="pixel-y" id="label-pixel-y">Nombre de pixels Y :</label>
+           <input type="range" id="pixel-y" min="8" max="50" step="2" value=16>
+       </div>
+        <div class="top-form__zoom">
+        <label for="pixel-y" id="zoom-label">Zoom :</label>
+        <input type="range" id="zoom" min="8" max="64" step="2" value=16>
+    </div>
+
+    </div>
+    <div class="app" id="app">
+        <div class="left-form" id="left-form"></div>
+        <div class="board" id="board">
+            <div class="grid" id="grid"></div>
+        </div>
+    </div>
+    <script src="./javascript/top-form/pixel-x.js"></script>
+    <script src="./javascript/top-form/pixel-y.js"></script>
+    <script src="./javascript/core.js"></script>
+</body>
+</html>
