@@ -5,7 +5,6 @@
   },
   "extends": "eslint:recommended",
   "rules": {
-    "no-undef": ["error"],
     "indent": ["error", 4],
     "quotes": ["error", "single"],
     "semi": ["error", "always"]

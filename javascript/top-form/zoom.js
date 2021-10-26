@@ -7,4 +7,4 @@ let zoom  = {
         zoom.zoomLabel.textContent = 'Zoom :'+e.target.value;
         app.drawGrid();
     }
-};
+};      
