@@ -27,7 +27,17 @@ let handlers = {
             app.grid.style.transform = `scale(${handlers.handleWheelMouse.scale})`;
         },
     },
-    handleRowClick : (e)=> {
-        e.target.style.backgroundColor = 'grey';
+    handleMouseDown: ()=> {
+        app.isSelected = true;
+        console.log('MouseDown',app.isSelected);
+    },  handleMouseUp: ()=> {
+        app.isSelected = false;
+        console.log('Mouse Up ',app.isSelected);
     },
+    handleMouseMove : (e)=> {
+        if (app.isSelected) {
+            e.target.style.backgroundColor = 'grey';
+        }
+    },
+
 };

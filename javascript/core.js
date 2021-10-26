@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 let app =
 {
+    isSelected : false,
     board : document.getElementById('board'),
     grid: document.getElementById('grid'),
     drawGrid : () => {
@@ -12,7 +13,9 @@ let app =
             for(let rowIndex = 0;rowIndex<handlers.handlePixelX.inputRangeX.value;rowIndex++) {
                 const row = document.createElement('div');
                 row.classList.add('row');
-                row.addEventListener('click',handlers.handleRowClick);
+                row.addEventListener('mousedown',handlers.handleMouseDown);
+                row.addEventListener('mouseup',handlers.handleMouseUp);
+                row.addEventListener('mousemove',handlers.handleMouseMove);
                 line.appendChild(row);
             }
         }
