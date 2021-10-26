@@ -5,23 +5,23 @@ let app =
     grid: document.getElementById('grid'),
     drawGrid : () => {
         app.grid.innerHTML = '';
-        for(let lineIndex = 0;lineIndex<pixelY.inputRangeY.value;lineIndex++){
+        for(let lineIndex = 0;lineIndex<handlers.handlePixelY.inputRangeY.value;lineIndex++){
             const line = document.createElement('div');
             line.classList.add('line');
             app.grid.appendChild(line);
-            for(let rowIndex = 0;rowIndex<pixelX.inputRangeX.value;rowIndex++) {
+            for(let rowIndex = 0;rowIndex<handlers.handlePixelX.inputRangeX.value;rowIndex++) {
                 const row = document.createElement('div');
                 row.classList.add('row');
-                row.addEventListener('click',listener.handleRowClick);
+                row.addEventListener('click',handlers.handleRowClick);
                 line.appendChild(row);
             }
         }
     },
  
     init: () => {
-        app.board.addEventListener('wheel', listener.handleScrollBoard);
-        pixelX.inputRangeX.addEventListener('input', pixelX.handlePixelX);
-        pixelY.inputRangeY.addEventListener('input', pixelY.handlePixelY);
+        listener.wheelMouseChange(),
+        listener.inputRangeYChange(),
+        listener.inputRangeXChange();
         app.drawGrid();
     }
 };
