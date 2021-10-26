@@ -31,13 +31,6 @@ body{
     align-items: flex-start;
     width: 300px;
 }
-.top-form__zoom{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 300px;
-}
 #pixel-x{
     width: 200px;
 }
@@ -63,7 +56,10 @@ body{
     flex-direction: row;
     border: 1px solid black;
     width: auto;
+    height: 16px;
 }
 .row{
+    width: 16px;
+    height: 16px;
     border: 1px solid black;
 }
