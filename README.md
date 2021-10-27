@@ -1,8 +1,6 @@
 ### pixel-generator
-Une application qui permet de dessiner sous forme de pixel-art
-et d'exporter le résultat au format svg ou png, les contraintes de ce projet solo
-était d'utiliser les fonctions de base de HTML/CSS et javascript.
-
+Une application javascript qui permet de dessiner sous forme de pixel-art
+et d'exporter le résultat au format png.
 
 ### features:
 * [x] choix des couleurs
@@ -11,6 +9,6 @@ et d'exporter le résultat au format svg ou png, les contraintes de ce projet so
 * [ ] effacer le dessin
 * [ ] choix de la taille du pinceau
 * [x] zoom/dézoom avec la molette
-
+* [ ] Choix de la taille en pixel de l'image exporter
 
 ### [Demo](https://adrien35240.github.io/pixel-generator/)
