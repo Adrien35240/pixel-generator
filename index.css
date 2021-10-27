@@ -44,11 +44,12 @@ body{
     overflow: auto;
     width: calc(100vw - var(--right-form-width));
     height: calc(100vh - var(--top-form-height));
-    background-color: green;
+    background-color: #e8e8e8;
 }
 .grid{
+    border: 1px solid grey;
     margin-top: 100px;
-    background-color: yellow;
+    background-color: transparent;
     width:auto;
 }
 .line{
