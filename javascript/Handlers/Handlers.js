@@ -3,6 +3,7 @@ handlers = {
     handleInputRadio : {
         button : document.querySelector('#export-button'),
         radio : document.querySelector('.final-size'),
+        //definie le nombre de pixels dans la grille
         setGridSize : ()=>{
             handlers.handleExportButton.radio.forEach(Elem => {
                 if(Elem.checked){
@@ -15,7 +16,9 @@ handlers = {
         }
     },
     handleWheelMouse:{
-        scale :1,
+        scale :10,
+        //modifie le scale de la grille avec la molette
+        //TODO: modifier le scale initial de la grille
         setScale: (event) => {
             event.preventDefault();
             handlers.handleWheelMouse.scale += event.deltaY * -0.01;
@@ -23,22 +26,27 @@ handlers = {
             app.grid.style.transform = `scale(${handlers.handleWheelMouse.scale})`;
         },
     },
+    //autorise le changement d'etat d'une case si le click gauche est maintenu
     handleMouseDown: ()=> {
         app.isSelected = true;
-    },  handleMouseUp: ()=> {
+    },
+    //desactive le changement d'etat d'une case si le click gauche n'est pas maintenu
+    handleMouseUp: ()=> {
         app.isSelected = false;
     },
+    //change le background-color d'une case si la souris bouge et click gauche maintenu
     handleMouseMove : (e)=> {
         if (app.isSelected) {
             e.target.style.backgroundColor = app.selectedColor;
         }
     },
+    //change le background-color d'une case a chaque click de souris
     handleMouseClick: (e) => {
         e.target.style.backgroundColor = app.selectedColor;
     },
     /**
-     * ajoute la class isSelected sur la divColor
-     * definie la couleur avec la dataset de la divColor
+     * ajoute la class isSelected sur la case
+     * definie la couleur avec le dataset de la case
      */
     handleClickColor: (e) => {
         const divColor = e.target;
@@ -52,7 +60,9 @@ handlers = {
     handleExportButton:{
         button : document.querySelector('#export-button'),
         radio : document.getElementsByName('final-size'),
+        //genere une image png a partir de la grille
         export : ()=>{
+            //TODO: controler la gestion de la taille de la grille pour la taille de l'export
             handlers.handleExportButton.radio.forEach(radioElem => {
                 if(radioElem.checked){
                     app.sizeGrid = radioElem.value+'px';
@@ -64,18 +74,25 @@ handlers = {
             // eslint-disable-next-line no-undef
             console.log('grid width :',app.grid.style.width);
             html2canvas(app.grid).then((canvas) => {
-                canvas.backgroundColor = null;
                 document.getElementById('modal__result').appendChild(canvas);
             });
         }
     },
     handlePalettePicker : {
         palettePicker : document.querySelector('#palette-picker'),
+        //affiche la palette de couleurs selectionnée
         palette: () => {
             colorsPicker.containerColorsPicker.innerHTML='';
             let resultPalette = handlers.handlePalettePicker.palettePicker.value;
             colorsPicker.colors = arrayOfColors[resultPalette];
             colorsPicker.drawPicker();
+        }
+    },
+    handleGomme: {
+        gomme: document.getElementById('gomme'),
+        //definie la couleur de la cible du pointeur sur 'transparent' avec le dataset de l'image de gomme
+        setGomme: (e) => {
+            app.selectedColor = e.target.dataset.color;
         }
     }
 };

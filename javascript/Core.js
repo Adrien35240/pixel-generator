@@ -6,6 +6,7 @@ app =
     isSelected : false,
     board : document.getElementById('board'),
     grid: document.getElementById('grid'),
+    //genere la grille
     drawGrid : () => {
         app.grid.innerHTML = '';
         for(let lineIndex = 0;lineIndex<app.sizeGrid;lineIndex++){
@@ -23,7 +24,9 @@ app =
             }
         }
     },
+    //initialisation
     init: () => {
+        listener.selectGomme(),
         listener.radioGridSizeChange(),
         listener.selectPaletteInput();
         listener.exportButtonPress(),

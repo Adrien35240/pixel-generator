@@ -1,3 +1,4 @@
+//Liste de palette de couleurs
 arrayOfColors = {
     std : [
         'AliceBlue','AntiqueWhite','Aqua','Aquamarine','Azure',

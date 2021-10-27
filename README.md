@@ -1,17 +1,18 @@
 ### pixel-generator
 Une application javascript qui permet de dessiner sous forme de pixel-art
-et d'exporter le résultat au format png.
-j'ai utilisé la librarie [html2canvas](https://html2canvas.hertzen.com/) pour pouvoir exporter la grille Html en png
+et d'exporter le résultat au format png.  
+j'ai utilisé la librairie [html2canvas](https://html2canvas.hertzen.com/) pour pouvoir exporter la grille Html en png
 ### features:
 * [x] choix des couleurs
 * [x] export en png
-* [ ] selection de forme (cercle/triangle/rectangle)
+* [ ] dessin en fonction d'une forme (cercle/triangle/rectangle)
 * [ ] effacer le dessin
+* [ ] gestion de la transparence
 * [ ] choix de la taille du pinceau
+* [x] gomme
 * [x] zoom/dézoom avec la molette
-* [x] Choix de la taille en pixel de l'image exporter
-
+* [ ] style
 ### Issues
-Parfois la sortie est mal centrée => canvas.offset
-
+la taille de l'image s'exporte en fonction du zoom  
+Le dessin s'efface si l'on change le nombre de pixels
 ### [Demo](https://adrien35240.github.io/pixel-generator/)

@@ -2,6 +2,10 @@ body{
     display: flex;
     flex-direction: column;
     overflow: auto;
+    color: floralwhite;
+}
+img{
+    width: 32px
 }
 .app{
     display: flex;
