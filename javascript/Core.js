@@ -1,6 +1,6 @@
-/* eslint-disable no-undef */
-let app =
+app =
 {
+    selectedColor : 'grey',
     isSelected : false,
     board : document.getElementById('board'),
     grid: document.getElementById('grid'),
@@ -13,6 +13,7 @@ let app =
             for(let rowIndex = 0;rowIndex<handlers.handlePixelX.inputRangeX.value;rowIndex++) {
                 const row = document.createElement('div');
                 row.classList.add('row');
+                row.addEventListener('click',handlers.handleMouseClick);
                 row.addEventListener('mousedown',handlers.handleMouseDown);
                 row.addEventListener('mouseup',handlers.handleMouseUp);
                 row.addEventListener('mousemove',handlers.handleMouseMove);
@@ -25,6 +26,7 @@ let app =
         listener.wheelMouseChange(),
         listener.inputRangeYChange(),
         listener.inputRangeXChange();
+        colorsPicker.drawPicker(),
         app.drawGrid();
     }
 };

@@ -1,0 +1,17 @@
+.color-picker{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.color{
+    margin: .1em;
+    width: 40px;
+    height: 40px;
+}
+.isSelected{
+    margin: .1em;
+    width: 40px;
+    height: 40px;
+    transform: scale(.7);
+}

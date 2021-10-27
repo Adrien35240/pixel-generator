@@ -3,9 +3,15 @@
     "browser": true,
     "es6": true
   },
+  "globals": {
+    "colorsPicker": true,
+    "handlers": true,
+    "listener": true,
+    "app": true
+  },
   "extends": "eslint:recommended",
   "rules": {
-    "indent": ["error", 4],
+    "indent": ["error", 4, {"SwitchCase": 1}],
     "quotes": ["error", "single"],
     "semi": ["error", "always"]
   }

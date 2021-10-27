@@ -1,4 +1,4 @@
-let handlers = {
+handlers = {
     handlePixelY : {
         labelY : document.getElementById('label-pixel-y'),
         inputRangeY : document.getElementById('pixel-y'),
@@ -23,21 +23,33 @@ let handlers = {
             event.preventDefault();
             handlers.handleWheelMouse.scale += event.deltaY * -0.01;
             handlers.handleWheelMouse.scale = Math.min(Math.max(.125, handlers.handleWheelMouse.scale), 4);
-            console.log('scale',handlers.handleWheelMouse.scale);
             app.grid.style.transform = `scale(${handlers.handleWheelMouse.scale})`;
         },
     },
     handleMouseDown: ()=> {
         app.isSelected = true;
-        console.log('MouseDown',app.isSelected);
     },  handleMouseUp: ()=> {
         app.isSelected = false;
-        console.log('Mouse Up ',app.isSelected);
     },
     handleMouseMove : (e)=> {
         if (app.isSelected) {
-            e.target.style.backgroundColor = 'grey';
+            e.target.style.backgroundColor = app.selectedColor;
         }
     },
-
+    handleMouseClick: (e) => {
+        e.target.style.backgroundColor = app.selectedColor;
+    },
+    /**
+     * ajoute la class isSelected sur la divColor
+     * definie la couleur avec la dataset de la divColor
+     */
+    handleClickColor: (e) => {
+        const divColor = e.target;
+        app.selectedColor = e.target.dataset.color;
+        let colorIsSelected =  document.getElementById('color-picker').getElementsByClassName('isSelected')[0];
+        if(colorIsSelected){
+            colorIsSelected.classList.replace('isSelected','color');
+        }
+        divColor.classList.replace('color','isSelected');
+    }
 };

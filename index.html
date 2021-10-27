@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="javascript/Components/ColorsPicker/colors-picker.css">
     <link rel="stylesheet" href="./css/variables.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="index.css">
     <title>Pixel Generator</title>
 </head>
 <body>
@@ -17,17 +18,19 @@
            <label for="pixel-y" id="label-pixel-y">Nombre de pixels Y :</label>
            <input type="range" id="pixel-y" min="8" max="112" step="2" value=16>
        </div>
-
     </div>
     <div class="app" id="app">
-        <div class="left-form" id="left-form"></div>
+        <div class="left-form" id="left-form">
+            <div class="color-picker" id="color-picker"></div>
+        </div>
         <div class="board" id="board" >
             <div class="grid" id="grid" ></div>
         </div>
     </div>
-    <script src="./javascript/handlers/listener.js"></script>
-    <script src="./javascript/handlers/handlers.js"></script>
-    <script src="./javascript/core.js"></script>
+    <script src="javascript/Components/ColorsPicker/ColorsPicker.js"></script>
+    <script src="javascript/Handlers/Listener.js"></script>
+    <script src="javascript/Handlers/Handlers.js"></script>
+    <script src="javascript/Core.js"></script>
     
 </body>
 </html>
