@@ -18,5 +18,6 @@
     margin: .1em;
     width: 20px;
     height: 20px;
+    border: 1px solid #ffef00;
     transform: scale(.7);
 }

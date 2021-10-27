@@ -23,9 +23,12 @@ handlers = {
         setScale: (event) => {
             event.preventDefault();
             handlers.handleWheelMouse.scale += event.deltaY * -0.01;
-            handlers.handleWheelMouse.scale = Math.min(Math.max(.125, handlers.handleWheelMouse.scale), 10);
-            //console.log(handlers.handleWheelMouse.scale);
+            handlers.handleWheelMouse.scale = Math.min(Math.max(.225, handlers.handleWheelMouse.scale), 10);
+            console.log(handlers.handleWheelMouse.scale);
+
             app.grid.style.transform = `scale(${handlers.handleWheelMouse.scale})`;
+            //TEST zoom
+
         },
     },
     handleMouseDown: ()=> {
@@ -57,7 +60,21 @@ handlers = {
     },
     handleExportButton:{
         button : document.querySelector('#export-button'),
+        radio : document.getElementsByName('final-size'),
+
         export : ()=>{
+            console.log('radio value',handlers.handleExportButton.radio);
+            handlers.handleExportButton.radio.forEach(radioElem => {
+                console.log('radioElem',radioElem.checked);
+                if(radioElem.checked){
+                    console.log('radioElem',radioElem);
+                    app.grid.style.width = radioElem.value+'px';
+                    app.grid.style.height = radioElem.value+'px';
+                }
+            });
+            app.grid.style.border = 'none';
+            /*app.grid.style.width = 32+'px';
+            app.grid.style.height = 32+'px';*/
             document.getElementById('modal').style.display='flex';
             // eslint-disable-next-line no-undef
             html2canvas(app.grid).then((canvas) => {
@@ -70,6 +87,7 @@ handlers = {
     handlePalettePicker : {
         palettePicker : document.querySelector('#palette-picker'),
         palette: () => {
+
             colorsPicker.containerColorsPicker.innerHTML='';
             let resultPalette = handlers.handlePalettePicker.palettePicker.value;
             colorsPicker.colors = arrayOfColors[resultPalette];
