@@ -4,6 +4,7 @@
     "es6": true
   },
   "globals": {
+    "arrayOfColors": true,
     "colorsPicker": true,
     "handlers": true,
     "listener": true,

@@ -1,6 +1,6 @@
 colorsPicker = {
     containerColorsPicker: document.getElementById('color-picker'),
-    colors: [ 'transparent','white', 'black', 'red', 'green'],
+    colors: [],
     drawPicker: () => {
         for (let indexColor = 0; indexColor < colorsPicker.colors.length; indexColor++) {
             const divColor = document.createElement('div');

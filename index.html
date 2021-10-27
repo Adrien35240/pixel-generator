@@ -13,14 +13,22 @@
     <div class="app" id="app">
         <div class="modal" id="modal"><div class="modal__result" id="modal__result"></div></div>
         <div class="left-form" id="left-form">
+
+            <select name="palette-picker" id="palette-picker">
+                <option value="std">--Choisissez une palette de couleurs--</option>
+                <option value="std">Standard Css</option>
+                <option value="skySample">Ciel</option>
+                <option value="rainbow">Arc-en-ciel</option>
+                <option value="pastel">Pastel</option>
+            </select>
             <div class="color-picker" id="color-picker"></div>
             <div class="top-form__pixel-x">
-                <label for="pixel-x" id="label-pixel-x">Nombre de pixels X :</label>
-                <input type="range" id="pixel-x" min="8" max="112" step="2" value=16>
+                <label for="pixel-x" id="label-pixel-x">Taille en pixels X :</label>
+                <input type="range" id="pixel-x" min="8" max="112" step="2" value=60>
             </div>
             <div class="top-form__pixel-y">
-                <label for="pixel-y" id="label-pixel-y">Nombre de pixels Y :</label>
-                <input type="range" id="pixel-y" min="8" max="112" step="2" value=16>
+                <label for="pixel-y" id="label-pixel-y">Taille en pixels Y :</label>
+                <input type="range" id="pixel-y" min="8" max="112" step="2" value=60)>
             </div>
             <button class="export-button" id="export-button">Exporter</button>
             <div id="export-result"></div>
@@ -29,6 +37,7 @@
             <div class="grid" id="grid" ></div>
         </div>
     </div>
+    <script src="assets/listColorsCss.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <script src="javascript/Components/ColorsPicker/ColorsPicker.js"></script>
     <script src="javascript/Handlers/Listener.js"></script>

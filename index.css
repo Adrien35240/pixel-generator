@@ -26,7 +26,7 @@ body{
 .left-form{
     width: var(--right-form-width);
     height: 100vh;
-    background-color: blue;
+    background-color: darkslategrey;
 }
 .top-form__pixel-x{
     display: flex;

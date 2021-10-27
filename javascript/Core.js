@@ -1,6 +1,6 @@
 app =
 {
-    selectedColor : 'grey',
+    selectedColor : 'black',
     isSelected : false,
     board : document.getElementById('board'),
     grid: document.getElementById('grid'),
@@ -23,6 +23,7 @@ app =
     },
  
     init: () => {
+        listener.selectPaletteInput();
         listener.exportButtonPress(),
         listener.wheelMouseChange(),
         listener.inputRangeYChange(),

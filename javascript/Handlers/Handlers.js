@@ -19,12 +19,12 @@ handlers = {
         }
     },
     handleWheelMouse:{
-        scale :1,
+        scale :4,
         setScale: (event) => {
             event.preventDefault();
             handlers.handleWheelMouse.scale += event.deltaY * -0.01;
             handlers.handleWheelMouse.scale = Math.min(Math.max(.125, handlers.handleWheelMouse.scale), 10);
-            console.log(handlers.handleWheelMouse.scale);
+            //console.log(handlers.handleWheelMouse.scale);
             app.grid.style.transform = `scale(${handlers.handleWheelMouse.scale})`;
         },
     },
@@ -48,6 +48,7 @@ handlers = {
     handleClickColor: (e) => {
         const divColor = e.target;
         app.selectedColor = e.target.dataset.color;
+        console.log('color :',app.selectedColor);
         let colorIsSelected =  document.getElementById('color-picker').getElementsByClassName('isSelected')[0];
         if(colorIsSelected){
             colorIsSelected.classList.replace('isSelected','color');
@@ -66,4 +67,14 @@ handlers = {
             });
         }
     },
+    handlePalettePicker : {
+        palettePicker : document.querySelector('#palette-picker'),
+        palette: () => {
+            colorsPicker.containerColorsPicker.innerHTML='';
+            let resultPalette = handlers.handlePalettePicker.palettePicker.value;
+            colorsPicker.colors = arrayOfColors[resultPalette];
+            console.log('palette selectionnée :',colorsPicker.colors);
+            colorsPicker.drawPicker();
+        }
+    }
 };
