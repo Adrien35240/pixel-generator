@@ -3,18 +3,29 @@ body{
     flex-direction: column;
     overflow: auto;
 }
-.top-form{
-    width: auto;
-    height: var(--top-form-height);
-    background-color: red;
-}
 .app{
     display: flex;
     flex-direction: row;
 }
+.modal{
+    z-index: 10;
+    position: fixed;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(75, 75, 75);
+    width: 100vw;
+    height: 100vh;
+}
+.modal__result{
+    background-color: lightblue;
+    width: auto;
+    height: auto;
+}
 .left-form{
     width: var(--right-form-width);
-    height: calc(100vh - var(--top-form-height));
+    height: 100vh;
     background-color: blue;
 }
 .top-form__pixel-x{
@@ -43,22 +54,23 @@ body{
     align-items: center;
     overflow: auto;
     width: calc(100vw - var(--right-form-width));
-    height: calc(100vh - var(--top-form-height));
+    height: 100vh;
     background-color: #e8e8e8;
 }
 .grid{
-    border: 1px solid grey;
     margin-top: 100px;
     background-color: transparent;
     width:auto;
+    border: 1px solid grey;
+
 }
 .line{
     display: flex;
     flex-direction: row;
     width: auto;
-    height: 10px;
+    height: 4px;
 }
 .row{
-    width: 10px;
-    height: 10px;
+    width: 4px;
+    height: 4px;
 }

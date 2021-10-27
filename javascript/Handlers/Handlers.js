@@ -1,3 +1,4 @@
+
 handlers = {
     handlePixelY : {
         labelY : document.getElementById('label-pixel-y'),
@@ -22,7 +23,8 @@ handlers = {
         setScale: (event) => {
             event.preventDefault();
             handlers.handleWheelMouse.scale += event.deltaY * -0.01;
-            handlers.handleWheelMouse.scale = Math.min(Math.max(.125, handlers.handleWheelMouse.scale), 4);
+            handlers.handleWheelMouse.scale = Math.min(Math.max(.125, handlers.handleWheelMouse.scale), 10);
+            console.log(handlers.handleWheelMouse.scale);
             app.grid.style.transform = `scale(${handlers.handleWheelMouse.scale})`;
         },
     },
@@ -51,5 +53,17 @@ handlers = {
             colorIsSelected.classList.replace('isSelected','color');
         }
         divColor.classList.replace('color','isSelected');
-    }
+    },
+    handleExportButton:{
+        button : document.querySelector('#export-button'),
+        export : ()=>{
+            document.getElementById('modal').style.display='flex';
+            // eslint-disable-next-line no-undef
+            html2canvas(app.grid).then((canvas) => {
+                canvas.backgroundColor = null;
+                console.log(canvas);
+                document.getElementById('modal__result').appendChild(canvas);
+            });
+        }
+    },
 };

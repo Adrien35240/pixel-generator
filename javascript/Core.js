@@ -23,6 +23,7 @@ app =
     },
  
     init: () => {
+        listener.exportButtonPress(),
         listener.wheelMouseChange(),
         listener.inputRangeYChange(),
         listener.inputRangeXChange();

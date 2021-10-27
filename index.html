@@ -9,24 +9,27 @@
     <title>Pixel Generator</title>
 </head>
 <body>
-    <div class="top-form" id="top-form">
-        <div class="top-form__pixel-x">
-            <label for="pixel-x" id="label-pixel-x">Nombre de pixels X :</label>
-            <input type="range" id="pixel-x" min="8" max="112" step="2" value=16>
-        </div>
-       <div class="top-form__pixel-y">
-           <label for="pixel-y" id="label-pixel-y">Nombre de pixels Y :</label>
-           <input type="range" id="pixel-y" min="8" max="112" step="2" value=16>
-       </div>
     </div>
     <div class="app" id="app">
+        <div class="modal" id="modal"><div class="modal__result" id="modal__result"></div></div>
         <div class="left-form" id="left-form">
             <div class="color-picker" id="color-picker"></div>
+            <div class="top-form__pixel-x">
+                <label for="pixel-x" id="label-pixel-x">Nombre de pixels X :</label>
+                <input type="range" id="pixel-x" min="8" max="112" step="2" value=16>
+            </div>
+            <div class="top-form__pixel-y">
+                <label for="pixel-y" id="label-pixel-y">Nombre de pixels Y :</label>
+                <input type="range" id="pixel-y" min="8" max="112" step="2" value=16>
+            </div>
+            <button class="export-button" id="export-button">Exporter</button>
+            <div id="export-result"></div>
         </div>
         <div class="board" id="board" >
             <div class="grid" id="grid" ></div>
         </div>
     </div>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <script src="javascript/Components/ColorsPicker/ColorsPicker.js"></script>
     <script src="javascript/Handlers/Listener.js"></script>
     <script src="javascript/Handlers/Handlers.js"></script>
