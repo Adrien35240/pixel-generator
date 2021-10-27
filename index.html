@@ -23,12 +23,29 @@
             </select>
             <div class="color-picker" id="color-picker"></div>
             <div class="top-form__pixel-x">
-                <label for="pixel-x" id="label-pixel-x">Taille en pixels X :</label>
+                <label for="pixel-x" id="label-pixel-x">Taille des pixels X :</label>
                 <input type="range" id="pixel-x" min="8" max="112" step="2" value=60>
             </div>
             <div class="top-form__pixel-y">
-                <label for="pixel-y" id="label-pixel-y">Taille en pixels Y :</label>
+                <label for="pixel-y" id="label-pixel-y">Taille des pixels Y :</label>
                 <input type="range" id="pixel-y" min="8" max="112" step="2" value=60)>
+            </div>
+            <div class="radio">
+                <div>
+                    <input type="radio" id="32" name="final-size" value=32
+                           checked>
+                    <label for="32">32x32</label>
+                </div>
+                <div >
+                    <input type="radio" id="64" name="final-size" value=64>
+                    <label for="64">64x64</label>
+                </div><div >
+                <input type="radio" id="96" name="final-size" value=96>
+                <label for="96">96x96</label>
+            </div><div >
+                <input type="radio" id="112" name="final-size" value=112>
+                <label for="112">112x112</label>
+            </div>
             </div>
             <button class="export-button" id="export-button">Exporter</button>
             <div id="export-result"></div>
