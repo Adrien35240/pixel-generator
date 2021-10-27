@@ -28,26 +28,6 @@ body{
     height: 100vh;
     background-color: darkslategrey;
 }
-.top-form__pixel-x{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 300px;
-}
-.top-form__pixel-y{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 300px;
-}
-#pixel-x{
-    width: 200px;
-}
-#pixel-y{
-    width: 200px;
-}
 .board{
     display: flex;
     justify-content: center;
@@ -58,9 +38,14 @@ body{
     background-color: #e8e8e8;
 }
 .grid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 100px;
     background-color: transparent;
-    width:auto;
+    width:32px;
+    height: 32px;
     border: 1px solid grey;
 
 }
@@ -68,11 +53,11 @@ body{
     display: flex;
     flex-direction: row;
     width: auto;
-    height: 4px;
+    height: 1px;
 }
 .row{
-    width: 4px;
-    height: 4px;
+    width: 1px;
+    height: 1px;
 }
 .radio{
     display: flex;

@@ -15,22 +15,24 @@
         <div class="left-form" id="left-form">
 
             <select name="palette-picker" id="palette-picker">
-                <option value="std">--Choisissez une palette de couleurs--</option>
-                <option value="std">Standard Css</option>
+                <option value="">--Choisissez une palette de couleurs--</option>
+                <option value="std" selected>Standard Css</option>
                 <option value="skySample">Ciel</option>
                 <option value="rainbow">Arc-en-ciel</option>
                 <option value="pastel">Pastel</option>
             </select>
             <div class="color-picker" id="color-picker"></div>
-            <div class="top-form__pixel-x">
-                <label for="pixel-x" id="label-pixel-x">Taille des pixels X :</label>
-                <input type="range" id="pixel-x" min="8" max="112" step="2" value=60>
-            </div>
-            <div class="top-form__pixel-y">
-                <label for="pixel-y" id="label-pixel-y">Taille des pixels Y :</label>
-                <input type="range" id="pixel-y" min="8" max="112" step="2" value=60)>
-            </div>
             <div class="radio">
+                <div>
+                    <input type="radio" id="8" name="final-size" value=8
+                           >
+                    <label for="8">8x8</label>
+                </div>
+                <div>
+                    <input type="radio" id="16" name="final-size" value=16
+                           >
+                    <label for="16">16x16</label>
+                </div>
                 <div>
                     <input type="radio" id="32" name="final-size" value=32
                            checked>
