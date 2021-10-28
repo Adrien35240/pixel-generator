@@ -95,5 +95,18 @@ handlers = {
         setGomme: (e) => {
             app.selectedColor = e.target.dataset.color;
         }
+    },
+    handleBackGround:{
+        inputColors : document.querySelector('#background-color'),
+        inputOpacity : document.querySelector('#background-opacity'),
+        setBackgroundGrid:(e) => {
+            console.log('background color',e.target.value);
+            app.grid.style.backgroundColor = e.target.value;
+
+        },
+        setOpacityGrid:(e) => {
+            console.log('opacity value',e.target.value);
+            app.grid.style.opacity = e.target.value+'%';
+        }
     }
 };
