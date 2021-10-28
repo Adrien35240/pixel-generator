@@ -4,7 +4,7 @@ body{
     overflow: auto;
     color: floralwhite;
 }
-img{
+.gomme{
     width: 32px;
 }
 .app{
@@ -28,6 +28,8 @@ img{
     height: auto;
 }
 .left-form{
+    diplay:flex;
+    justify-content: center;
     width: var(--right-form-width);
     height: 100vh;
     background-color: darkslategrey;
@@ -67,4 +69,34 @@ img{
 .radio{
     display: flex;
     flex-direction: row;
+    margin: 1em;
+    justify-content: space-evenly;
+}
+.input-radio input{
+    margin: 1em;
+    transform: scale(2);
+    border: none;
+}
+.background{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.background input{
+    width: 50%;
+    height: 50px;
+    margin: 1em;
+}
+.export-button{
+    padding: .5em;
+    margin: 2em;
+    border: none;
+    border-radius: 20px;
+    width: 50%;
+    font-size: 1.4em;
+    transition: all .2s ease-in-out;
+}
+.export-button:hover {
+    background-color: #5aa600;
 }

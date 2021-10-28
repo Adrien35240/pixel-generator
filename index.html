@@ -14,10 +14,9 @@
         <div class="modal" id="modal"><div class="modal__result" id="modal__result"></div></div>
         <div class="left-form" id="left-form">
             <div class="tools">
-                <img src="assets/images/gomme-icon.png" id="gomme" alt="gomme" data-color="transparent"></img>
-
+                <img class="gomme" src="assets/images/gomme-icon.png" id="gomme" alt="gomme" data-color="transparent"></img>
             </div>
-            <select name="palette-picker" id="palette-picker">
+            <select class="palette-picker" name="palette-picker" id="palette-picker">
                 <option value="">--Choisissez une palette de couleurs--</option>
                 <option value="std" selected>Standard Css</option>
                 <option value="skySample">Ciel</option>
@@ -26,41 +25,35 @@
             </select>
             <div class="color-picker" id="color-picker"></div>
             <div class="radio">
-                <div>
-                    <input type="radio" id="8" name="final-size" value=8
-                           >
-                    <label for="8">8x8</label>
-                </div>
-                <div>
-                    <input type="radio" id="16" name="final-size" value=16
-                           >
+                <div class="input-radio">
                     <label for="16">16x16</label>
+                    <input type="radio" id="16" name="final-size" value=16>
                 </div>
-                <div>
-                    <input type="radio" id="32" name="final-size" value=32
-                           checked>
+                <div class="input-radio">
                     <label for="32">32x32</label>
+                    <input type="radio" id="32" name="final-size" value=32 checked>
                 </div>
-                <div >
-                    <input type="radio" id="64" name="final-size" value=64>
+                <div class="input-radio">
                     <label for="64">64x64</label>
-                </div><div >
-                <input type="radio" id="96" name="final-size" value=96 >
-                <label for="96">96x96</label>
-            </div><div >
-                <input type="radio" id="112" name="final-size" value=112>
-                <label for="112">112x112</label>
+                    <input type="radio" id="64" name="final-size" value=64>
+                </div>
+                <div class="input-radio">
+                    <label for="96">96x96</label>
+                    <input type="radio" id="96" name="final-size" value=96 >
+            </div>
+                <div class="input-radio">
+                    <label for="112">112x112</label>
+                    <input type="radio" id="112" name="final-size" value=112>
             </div>
             </div>
-            <div>
+            <div class="background">
                 <label for="background-color">Background : (Transparent par default) </label>
-                <input type="color" colorformat="" id="background-color" min="0" max="100" >
+                <input type="color" id="background-color">
 <!--       //TODO: gerer l'opacity : probleme opacity s'applique sur toute la grille
          <label for="background-opacity">Opacity</label>
-                <input type="range" id="background-opacity"></input>-->
+                <input type="range" id="background-opacity" min="0" max="100"></input>-->
+                <button class="export-button" id="export-button">Exporter</button>
             </div>
-
-            <button class="export-button" id="export-button">Exporter</button>
             <div id="export-result"></div>
         </div>
         <div class="board" id="board" >
@@ -73,6 +66,5 @@
     <script src="javascript/Handlers/Listener.js"></script>
     <script src="javascript/Handlers/Handlers.js"></script>
     <script src="javascript/Core.js"></script>
-    
 </body>
 </html>

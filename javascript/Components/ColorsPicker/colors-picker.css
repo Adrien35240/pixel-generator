@@ -11,6 +11,11 @@
     height: 20px;
     transition: transform .1s ease-in-out;
 }
+.palette-picker{
+    padding: .2em;
+    margin: 1em;
+    border: none;
+}
 .color:hover{
     box-shadow: rgba(0, 0, 0, 0.63) 0px 5px 15px;
     transform: scale(3);
