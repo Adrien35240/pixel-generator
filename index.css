@@ -7,6 +7,9 @@ body{
 .gomme{
     width: 32px;
 }
+.gomme:hover{
+    background-color: #5aa600;
+}
 .app{
     display: flex;
     flex-direction: row;
