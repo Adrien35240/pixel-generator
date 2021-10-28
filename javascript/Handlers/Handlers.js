@@ -16,14 +16,15 @@ handlers = {
         }
     },
     handleWheelMouse:{
-        scale :10,
+        scale :1,
         //modifie le scale de la grille avec la molette
-        //TODO: modifier le scale initial de la grille
         setScale: (event) => {
             event.preventDefault();
-            handlers.handleWheelMouse.scale += event.deltaY * -0.01;
-            handlers.handleWheelMouse.scale = Math.min(Math.max(.125, handlers.handleWheelMouse.scale), 100);
+            handlers.handleWheelMouse.scale += event.deltaY * -0.03;
+            handlers.handleWheelMouse.scale = Math.round(Math.min(Math.max(1, handlers.handleWheelMouse.scale), 100));
             app.grid.style.transform = `scale(${handlers.handleWheelMouse.scale})`;
+            console.log('scale : ',handlers.handleWheelMouse.scale);
+            console.log('size grid  : ',app.sizeGrid);
         },
     },
     //autorise le changement d'etat d'une case si le click gauche est maintenu
@@ -62,19 +63,19 @@ handlers = {
         radio : document.getElementsByName('final-size'),
         //genere une image png a partir de la grille
         export : ()=>{
-            //TODO: controler la gestion de la taille de la grille pour la taille de l'export
             handlers.handleExportButton.radio.forEach(radioElem => {
                 if(radioElem.checked){
                     app.sizeGrid = radioElem.value+'px';
-                    app.sizeGrid = radioElem.value+'px';
+                    app.sizeCanvas = radioElem.value;
                 }
             });
             app.grid.style.border = 'none';
             document.getElementById('modal').style.display='flex';
-            // eslint-disable-next-line no-undef
-            console.log('grid width :',app.grid.style.width);
-            html2canvas(app.grid).then((canvas) => {
-                document.getElementById('modal__result').appendChild(canvas);
+            app.grid.style.width = app.sizeGrid;
+            app.grid.style.height = app.sizeGrid;
+            app.grid.style.transform = 'scale(1)';
+            html2canvas(app.grid,{backgroundColor:null,width:app.sizeCanvas,height:app.sizeCanvas}).then((canvasResult) => {
+                document.getElementById('modal__result').appendChild(canvasResult);
             });
         }
     },

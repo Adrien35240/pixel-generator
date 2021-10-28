@@ -13,7 +13,10 @@
     <div class="app" id="app">
         <div class="modal" id="modal"><div class="modal__result" id="modal__result"></div></div>
         <div class="left-form" id="left-form">
-            <img src="assets/images/gomme-icon.png" id="gomme" alt="gomme" data-color="transparent"></img>
+            <div class="tools">
+                <img src="assets/images/gomme-icon.png" id="gomme" alt="gomme" data-color="transparent"></img>
+
+            </div>
             <select name="palette-picker" id="palette-picker">
                 <option value="">--Choisissez une palette de couleurs--</option>
                 <option value="std" selected>Standard Css</option>
@@ -42,14 +45,13 @@
                     <input type="radio" id="64" name="final-size" value=64>
                     <label for="64">64x64</label>
                 </div><div >
-                <input type="radio" id="96" name="final-size" value=96>
+                <input type="radio" id="96" name="final-size" value=96 >
                 <label for="96">96x96</label>
             </div><div >
                 <input type="radio" id="112" name="final-size" value=112>
                 <label for="112">112x112</label>
             </div>
             </div>
-            <div>Attention: la taille de l'image exportée est définie par l'affichage actuel de la grille</br>Zoomer/Dézoomer pour obtenir la taille souhaitée</div>
             <button class="export-button" id="export-button">Exporter</button>
             <div id="export-result"></div>
         </div>

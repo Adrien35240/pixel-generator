@@ -16,7 +16,6 @@
     transform: scale(3);
 }
 .isSelected{
-    margin: .1em;
     width: 20px;
     height: 20px;
     border: 1px solid #ffef00;

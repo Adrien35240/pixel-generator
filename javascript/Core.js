@@ -3,6 +3,7 @@ app =
     radioForEvent : null,
     sizeGrid:32,
     selectedColor : 'black',
+    //TODO:verifié l'utililisation de cette variable (class de colorspicker)
     isSelected : false,
     board : document.getElementById('board'),
     grid: document.getElementById('grid'),
