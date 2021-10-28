@@ -18,7 +18,7 @@ body{
     z-index: 10;
     position: fixed;
     display: none;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgb(75, 75, 75);
@@ -26,10 +26,15 @@ body{
     height: 100vh;
 }
 .modal__result{
-    background-color: lightblue;
     width: auto;
     height: auto;
 }
+.save-button{
+    margin-top: 3em;
+    font-size: 1.4em;
+    padding: .8em;
+}
+
 .left-form{
     diplay:flex;
     justify-content: center;

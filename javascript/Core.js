@@ -27,6 +27,7 @@ app =
     },
     //initialisation
     init: () => {
+
         listener.backgroundGridChange(),
         //   listener.opacityGridChange(),
         listener.selectGomme(),

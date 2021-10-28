@@ -23,8 +23,8 @@ handlers = {
             handlers.handleWheelMouse.scale += event.deltaY * -0.03;
             handlers.handleWheelMouse.scale = Math.round(Math.min(Math.max(1, handlers.handleWheelMouse.scale), 100));
             app.grid.style.transform = `scale(${handlers.handleWheelMouse.scale})`;
-            console.log('scale : ',handlers.handleWheelMouse.scale);
-            console.log('size grid  : ',app.sizeGrid);
+            /* console.log('scale : ',handlers.handleWheelMouse.scale);
+            console.log('size grid  : ',app.sizeGrid);*/
         },
     },
     //autorise le changement d'etat d'une case si le click gauche est maintenu
@@ -74,8 +74,15 @@ handlers = {
             app.grid.style.width = app.sizeGrid;
             app.grid.style.height = app.sizeGrid;
             app.grid.style.transform = 'scale(1)';
+            // eslint-disable-next-line no-undef
             html2canvas(app.grid,{backgroundColor:null,width:app.sizeCanvas,height:app.sizeCanvas}).then((canvasResult) => {
-                document.getElementById('modal__result').appendChild(canvasResult);
+                document.getElementById('save-link').appendChild(canvasResult);
+            });
+            const button = document.getElementById('save-button');
+            button.addEventListener('click', ()=>{
+                let dataURL = document.getElementsByTagName('canvas')[0].toDataURL('image/png');
+                document.getElementById('save-link').href = dataURL;
+                document.getElementById('save-link').download = 'filename.png';
             });
         }
     },
