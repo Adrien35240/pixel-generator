@@ -13,5 +13,6 @@ j'ai utilisé la librairie [html2canvas](https://html2canvas.hertzen.com/) pour 
 * [x] zoom/dézoom avec la molette
 * [ ] style
 * [ ] zoom centrer sur le pointeur
+* [ ] pipette de couleurs
 
 ### [Demo](https://adrien35240.github.io/pixel-generator/)
