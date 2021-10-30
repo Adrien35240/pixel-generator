@@ -39,6 +39,7 @@ handlers = {
     handleMouseMove : (e)=> {
         if (app.isSelected) {
             e.target.style.backgroundColor = app.selectedColor;
+            e.target.dataset.modified = 'true';
         }
     },
     //change le background-color d'une case a chaque click de souris
@@ -105,15 +106,12 @@ handlers = {
     },
     handleBackGround:{
         inputColors : document.querySelector('#background-color'),
-        inputOpacity : document.querySelector('#background-opacity'),
+        inputOpacity : document.querySelector('#background-transparent'),
         setBackgroundGrid:(e) => {
-            console.log('background color',e.target.value);
             app.grid.style.backgroundColor = e.target.value;
-
         },
-        setOpacityGrid:(e) => {
-            console.log('opacity value',e.target.value);
-            app.grid.style.opacity = e.target.value+'%';
+        setTransparentGrid:(e) => {
+            app.grid.style.backgroundColor = 'transparent';
         }
     }
 };

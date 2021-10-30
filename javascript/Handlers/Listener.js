@@ -8,7 +8,7 @@ listener = {
             Elem.addEventListener('input',handlers.handleInputRadio.setGridSize);
         });},
     backgroundGridChange : () => handlers.handleBackGround.inputColors.addEventListener('input',handlers.handleBackGround.setBackgroundGrid),
-    opacityGridChange:()=> handlers.handleBackGround.inputOpacity.addEventListener('input',handlers.handleBackGround.setOpacityGrid)
+    opacityGridChange : () => handlers.handleBackGround.inputOpacity.addEventListener('click',handlers.handleBackGround.setTransparentGrid),
 };
 
 

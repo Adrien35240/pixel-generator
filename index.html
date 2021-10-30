@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/reset.css">
@@ -54,11 +54,9 @@
             </div>
             </div>
             <div class="background">
-                <label for="background-color">Background : (Transparent par default) </label>
+                <label for="background-color">Background :</label>
                 <input type="color" id="background-color">
-<!--       //TODO: gerer l'opacity : probleme opacity s'applique sur toute la grille
-         <label for="background-opacity">Opacity</label>
-                <input type="range" id="background-opacity" min="0" max="100"></input>-->
+                <button class="transparent" type="button" id="background-transparent">Transparent</button>
                 <button class="export-button" id="export-button">Exporter</button>
             </div>
             <div id="export-result"></div>

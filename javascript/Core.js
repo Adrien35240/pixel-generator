@@ -27,9 +27,8 @@ app =
     },
     //initialisation
     init: () => {
-
         listener.backgroundGridChange(),
-        //   listener.opacityGridChange(),
+        listener.opacityGridChange(),
         listener.selectGomme(),
         listener.radioGridSizeChange(),
         listener.selectPaletteInput();
