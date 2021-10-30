@@ -9,6 +9,7 @@ listener = {
         });},
     backgroundGridChange : () => handlers.handleBackGround.inputColors.addEventListener('input',handlers.handleBackGround.setBackgroundGrid),
     opacityGridChange : () => handlers.handleBackGround.inputOpacity.addEventListener('click',handlers.handleBackGround.setTransparentGrid),
+    selectPipette: ()=> handlers.handlePipette.pipette.addEventListener('click',handlers.handlePipette.setSelectedColorWithPipette)
 };
 
 

@@ -3,6 +3,7 @@ app =
     radioForEvent : null,
     sizeGrid:32,
     selectedColor : 'black',
+    pipetteSelected:false,
     //TODO:verifié l'utililisation de cette variable (class de colorspicker)
     isSelected : false,
     board : document.getElementById('board'),
@@ -27,6 +28,7 @@ app =
     },
     //initialisation
     init: () => {
+        listener.selectPipette(),
         listener.backgroundGridChange(),
         listener.opacityGridChange(),
         listener.selectGomme(),

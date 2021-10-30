@@ -23,8 +23,7 @@ handlers = {
             handlers.handleWheelMouse.scale += event.deltaY * -0.03;
             handlers.handleWheelMouse.scale = Math.round(Math.min(Math.max(1, handlers.handleWheelMouse.scale), 100));
             app.grid.style.transform = `scale(${handlers.handleWheelMouse.scale})`;
-            /* console.log('scale : ',handlers.handleWheelMouse.scale);
-            console.log('size grid  : ',app.sizeGrid);*/
+
         },
     },
     //autorise le changement d'etat d'une case si le click gauche est maintenu
@@ -37,20 +36,35 @@ handlers = {
     },
     //change le background-color d'une case si la souris bouge et click gauche maintenu
     handleMouseMove : (e)=> {
-        if (app.isSelected) {
+        if (app.isSelected && !app.pipetteSelected) {
             e.target.style.backgroundColor = app.selectedColor;
             e.target.dataset.modified = 'true';
+        } else if(app.pipetteSelected){
+            app.selectedColor = e.target.style.backgroundColor;
+            console.log(app.selectedColor);
         }
     },
     //change le background-color d'une case a chaque click de souris
     handleMouseClick: (e) => {
-        e.target.style.backgroundColor = app.selectedColor;
+        if(!app.pipetteSelected) {
+            e.target.style.backgroundColor = app.selectedColor;
+        } else {
+            app.selectedColor = e.target.style.backgroundColor;
+            app.pipetteSelected = false;
+            app.grid.style.cursor = 'initial',
+            handlers.handlePipette.pipette.classList.remove('focus');
+            console.log(app.selectedColor);
+            console.log(app.pipetteSelected);
+        }
     },
     /**
      * ajoute la class isSelected sur la case
      * definie la couleur avec le dataset de la case
      */
     handleClickColor: (e) => {
+        app.pipetteSelected = false;
+        app.grid.style.cursor = 'initial',
+        handlers.handlePipette.pipette.classList.remove('focus');
         const divColor = e.target;
         app.selectedColor = e.target.dataset.color;
         let colorIsSelected =  document.getElementById('color-picker').getElementsByClassName('isSelected')[0];
@@ -91,6 +105,10 @@ handlers = {
         palettePicker : document.querySelector('#palette-picker'),
         //affiche la palette de couleurs selectionnée
         palette: () => {
+            handlers.handleGomme.gomme.classList.remove('focus');
+            app.pipetteSelected = false;
+            app.grid.style.cursor = 'initial',
+            handlers.handlePipette.pipette.classList.remove('focus');
             colorsPicker.containerColorsPicker.innerHTML='';
             let resultPalette = handlers.handlePalettePicker.palettePicker.value;
             colorsPicker.colors = arrayOfColors[resultPalette];
@@ -101,6 +119,10 @@ handlers = {
         gomme: document.getElementById('gomme'),
         //definie la couleur de la cible du pointeur sur 'transparent' avec le dataset de l'image de gomme
         setGomme: (e) => {
+            app.pipetteSelected = false;
+            app.grid.style.cursor = 'initial',
+            handlers.handlePipette.pipette.classList.remove('focus');
+            handlers.handleGomme.gomme.classList.add('focus');
             app.selectedColor = e.target.dataset.color;
         }
     },
@@ -113,5 +135,14 @@ handlers = {
         setTransparentGrid:(e) => {
             app.grid.style.backgroundColor = 'transparent';
         }
+    },
+    handlePipette:{
+        pipette: document.getElementById('pipette'),
+        setSelectedColorWithPipette: () => {
+            handlers.handleGomme.gomme.classList.remove('focus');
+            app.grid.style.cursor = 'crosshair';
+            app.pipetteSelected = true;
+            handlers.handlePipette.pipette.classList.add('focus');
+        },
     }
 };

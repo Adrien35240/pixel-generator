@@ -4,10 +4,13 @@ body{
     overflow: auto;
     color: floralwhite;
 }
-.gomme{
+.icon{
     width: 32px;
 }
-.gomme:hover{
+.focus{
+    background-color: #5aa600;
+}
+.icon:hover{
     background-color: #5aa600;
 }
 .app{
