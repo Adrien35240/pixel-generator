@@ -13,8 +13,5 @@ j'ai utilisé la librairie [html2canvas](https://html2canvas.hertzen.com/) pour 
 * [x] zoom/dézoom avec la molette
 * [ ] style
 * [ ] zoom centrer sur le pointeur
-### Issues
-la taille de l'image s'exporte en fonction du zoom  
-Le dessin s'efface si l'on change le nombre de pixels
-la selection reste active si l'on quitte la grille avec le click gauche pressé
+
 ### [Demo](https://adrien35240.github.io/pixel-generator/)
