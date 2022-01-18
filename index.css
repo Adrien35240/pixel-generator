@@ -49,7 +49,8 @@ body{
     padding: .8em;
 }
 .left-form{
-    diplay:flex;
+    display:flex;
+    flex-direction: column;
     justify-content: center;
     width: var(--right-form-width);
     height: 100vh;
@@ -90,6 +91,7 @@ body{
 .radio{
     display: flex;
     flex-direction: row;
+    font-size: .8rem;
     margin: 1em;
     justify-content: space-evenly;
 }
